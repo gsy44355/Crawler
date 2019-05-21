@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 /**
@@ -24,5 +26,11 @@ public class WeiboCrawlerServiceImplTest {
 
     @Test
     public void reStart() {
+        try {
+            String html = WebCrawlerUtil.getWebHtml("https://weibo.cn/u/6697930990?filter=2&page=2", CreateHeaderMap.getMapByName("crawler/page"),"utf-8");
+            System.out.println(html);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

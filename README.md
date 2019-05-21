@@ -10,6 +10,7 @@
 +  示例代码是可以直接运行，对微博某个博主进行相册进行爬取
 +  需要修改resources/crawler目录下的properties文件
 分别是访问页面所需要的headers
++  如何修改headers配置文件可以看里面的注释。
 +  如果需要扩展，可以参考WeiboCrawlerServiceImpl
 +  启动CrawlerApplication，输入命令即可运行
     
