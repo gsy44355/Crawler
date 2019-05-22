@@ -8,6 +8,6 @@
         delete from tb_crawler_url;
     </delete>
     <update id="resetAll">
-        update tb_crawler_url set busy='0';
+        update tb_crawler_url set busy='0' where busy = '1';
     </update>
 </mapper>

@@ -69,5 +69,6 @@ public interface CrawlerBaseService {
      */
     void doCrawlerByMultiThread(String type, long sleepTime, int threadCounts, CrawlerSpecialFunc crawlerSpecialFunc);
 
+    void updateUrlFinish(String url);
 
 }

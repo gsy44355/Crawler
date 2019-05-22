@@ -78,7 +78,7 @@ public class CrawlerBaseServiceImpl implements CrawlerBaseService {
                 }
                 LogUtil.info(this.getClass(),"获取到Url={}",url);
                 crawlerSpecialFunc.specialFunc(url);
-                this.deleteUrl(url);
+                this.updateUrlFinish(url);
             }catch (Exception e){
                 errorCount++;
                 LogUtil.error(this.getClass(),"抓取异常，决定需要如何处理",e);
@@ -108,5 +108,10 @@ public class CrawlerBaseServiceImpl implements CrawlerBaseService {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void updateUrlFinish(String url) {
+        tbCrawlerUrlMapper.updateByPrimaryKeySelective(new TbCrawlerUrl(url,"2"));
     }
 }

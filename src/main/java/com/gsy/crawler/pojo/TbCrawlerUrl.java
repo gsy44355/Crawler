@@ -18,7 +18,7 @@ public class TbCrawlerUrl {
     private String type;
 
     /**
-     * 是否正在使用，0未使用，1正在使用
+     * 是否正在使用，0未使用，1正在使用,2已经完成爬取
      */
     @Column(name = "BUSY")
     private String busy;
